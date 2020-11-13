@@ -163,7 +163,8 @@ void findavgTimePriority( ProcessType plist[], int n)
     * 1- Sort the processes (i.e. plist[]), burst time and priority according to the priority.
     * 2- Now simply apply FCFS algorithm.
     */
-  
+    qsort(plist, n, sizeof(ProcessType),my_comparer);
+    findavgTimeFCFS(plist, n);
     //Display processes along with all details 
     printf("\n*********\nPriority\n");
 }
